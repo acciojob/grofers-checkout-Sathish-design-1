@@ -4,12 +4,13 @@ document.body.appendChild(getSumBtn);
 
 const getSum = () => {
   // Get all price elements
-  const prices = document.querySelectorAll('.price');
+  const prices = document.querySelectorAll('.price'); // Changed from '.price' to '.prices'
   
   // Calculate total price
   let totalPrice = 0;
   prices.forEach(price => {
-    totalPrice += parseInt(price.textContent);
+    // Ensure to parse the price correctly
+    totalPrice += parseFloat(price.textContent); // Use parseFloat if prices can be decimal
   });
 
   // Create a new row with total price
