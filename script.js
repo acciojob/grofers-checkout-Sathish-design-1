@@ -4,13 +4,12 @@ document.body.appendChild(getSumBtn);
 
 const getSum = () => {
   // Get all price elements
-  const prices = document.querySelectorAll('.price'); // Changed from '.price' to '.prices'
+  const prices = document.querySelectorAll('.prices');
   
   // Calculate total price
   let totalPrice = 0;
   prices.forEach(price => {
-    // Ensure to parse the price correctly
-    totalPrice += parseFloat(price.textContent); // Use parseFloat if prices can be decimal
+    totalPrice += parseFloat(price.textContent);
   });
 
   // Create a new row with total price
@@ -19,6 +18,7 @@ const getSum = () => {
   const newCell = document.createElement('td');
   newCell.colSpan = 2; // Span across both columns
   newCell.textContent = `Total Price: ${totalPrice}`;
+  newCell.id = "ans"; // Set the id for the cell
   newRow.appendChild(newCell);
   table.appendChild(newRow);
 };
